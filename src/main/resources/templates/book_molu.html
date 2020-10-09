@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <img src="http://www.xbiquge.la/files/article/image/10/10489/10489s.jpg">
+</div>
+<div>
+    <div>
+        <h1>三寸人间</h1>
+        <p>作    者：耳根</p>
+    </div>
+    <div>
+        <p>
+            <font style="color: #0066FF"></font>
+            <a>手机阅读《三寸人间》无弹窗纯文字全文免费阅读</a>
+        <p>
+        举头三尺无神明，掌心三寸是人间。这是耳根继《仙逆》《求魔》《我欲封天》《一念永恒》后，创作的第五部长篇小说《三寸人间》。
+        </p>
+
+        </p>
+    </div>
+</div>
+<div>
+    <div>
+        <dl>
+            <dd th:each="book_mulv:${book_mulv}">
+                <a href="/tobook_text" th:text="${book_mulv.bookDirectory}"></a>
+            </dd>
+        </dl>
+    </div>
+</div>
+
+</body>
+</html>

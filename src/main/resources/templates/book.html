@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>小说</title>
+</head>
+<script src="js/jquery-1.7.2.min.js"></script>
+<body>
+<div>
+    <div>
+        <a th:href="@{'/tobook_mulu?bookName='+${book.bookName}}">
+        <img  th:src="@{${book.bookImg}}">
+        </a>
+    </div>
+    <dl>
+        <dt>
+            <span th:text="${book.bookAuthor}"></span>
+            <a th:text="${book.bookName}" id="bookname" name="bookName"></a>
+        </dt>
+        <dd th:text="${book.bookIntroduction}">    </dd>
+    </dl>
+</div>
+
+</body>
+</html>

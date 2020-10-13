@@ -18,7 +18,8 @@ import java.security.NoSuchAlgorithmException;
 class CaoheBookApplicationTests {
 
     @Test
-    void contextLoads() {
+    void load(){
+
     }
 
     //AES加密测试
@@ -35,7 +36,7 @@ class CaoheBookApplicationTests {
 
     @Test
     void tessIO() throws IOException {
-        IO.read("D:\\桌面\\小说\\第一卷 笼中雀 第五十章 天行健.text");
+        IO.read("D:/桌面/小说/儒道至圣/第166章锁龙.text");
     }
 
 

@@ -7,6 +7,8 @@ import java.util.List;
 public interface BookMulvService {
 
 
-    public List<BookMulv> findbyname( String bookName);
+     List<BookMulv> findbyname(Integer bookId);
+
+     BookMulv findbyId(Integer bookmulvId);
 
 }

@@ -11,4 +11,5 @@ public class BookMulv {
     private Integer bookId;
     private String bookName;
     private String bookDirectory;
+    private Integer bookNumber;
 }

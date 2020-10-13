@@ -17,9 +17,15 @@ public class Book_mulvServiceImpl implements BookMulvService {
 
 
     @Override
-    public List<BookMulv> findbyname(String bookName) {
+    public BookMulv findbyId(Integer bookmulvId) {
+        BookMulv bookMulv = bookMulvMapper.selectById(bookmulvId);
+        return bookMulv;
+    }
+
+    @Override
+    public List<BookMulv> findbyname(Integer bookId) {
         QueryWrapper<BookMulv> queryWrapper = new QueryWrapper<>();
-        queryWrapper.lambda().eq(BookMulv::getBookName,bookName);
+        queryWrapper.eq("book_number",bookId);
         List<BookMulv> bookMulvs = bookMulvMapper.selectList(queryWrapper);
         return bookMulvs;
     }

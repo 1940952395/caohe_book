@@ -31,7 +31,7 @@ public class BookController {
     //书籍主页
     @RequestMapping("/tobook")
     public String tobook(Model model){
-        Book book  = bookService.findbookId(34);
+        Book book  = bookService.findbookId(29);
         System.out.println(book);
         model.addAttribute("book",book);
         return "book";
@@ -39,19 +39,24 @@ public class BookController {
 
     //书籍目录
     @RequestMapping(value = "/tobook_mulu")
-    public String tobook_mulu(String bookName, Model model){
-        System.out.println(bookName);
-        List<BookMulv> bookMulvs = book_mulvService.findbyname(bookName);
-        System.out.println(bookMulvs.toString());
+    public String tobook_mulu(Integer bookid, Model model){
+        Book book  = bookService.findbookId(bookid);
+        List<BookMulv> bookMulvs = book_mulvService.findbyname(bookid);
         model.addAttribute("book_mulv",bookMulvs);
+        model.addAttribute("book",book);
         return "book_molu";
     }
 
     //书籍text页
     @RequestMapping("/tobook_text")
-    public String tobook_text(Model model) throws IOException {
-        StringBuffer str = IO.read("D:/桌面/小说/第八章 决定.text");
+    public String tobook_text(Integer bookId,Integer bookmulvId,Model model) throws IOException {
+        System.out.println(bookId);
+        System.out.println(bookmulvId);
+        Book book = this.bookService.findbookId(bookId);
+        BookMulv bookMulv = this.book_mulvService.findbyId(bookmulvId);
+        StringBuffer str = IO.read("D:/桌面/小说/ "+book.getBookName()+"/ "+bookMulv.getBookDirectory()+".text");
         model.addAttribute("text",str);
+        model.addAttribute("book",bookMulv.getBookDirectory());
         System.out.println(str);
         return "book_text";
     }
